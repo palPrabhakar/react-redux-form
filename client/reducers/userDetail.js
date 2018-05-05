@@ -4,7 +4,7 @@ export function userDetails(state = {}, action) {
     // debugger;
     switch (action.type) {
         case 'FIELD_CHANGED':
-            return { ...state, [action.field]: { value: action.value.trim(), isValid: validateInput(action.field, action.value.trim()) } }
+            return { ...state, [action.field]: { value: action.value, isValid: validateInput(action.field, action.value.trim()) } }
         case 'RESET_FORM':
             return defaultState.userDetails;
         default:

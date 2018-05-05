@@ -5,7 +5,7 @@ export function bankDetails(state = [], action) {
         case 'BANK_FIELD_CHANGED':
             return [
                 ...state.slice(0, action.id),
-                { ...state[action.id], [action.field]: { value: action.value.trim(), isValid: validateInput(action.field, action.value.trim()) } },
+                { ...state[action.id], [action.field]: { value: action.value, isValid: validateInput(action.field, action.value.trim()) } },
                 ...state.slice(action.id + 1)
             ];
         case 'REMOVE_BANK_FIELD':
@@ -35,7 +35,6 @@ export function bankDetails(state = [], action) {
 }
 
 function validateInput(type, value) {
-    // debugger;
     switch (type) {
         case 'name':
             if (value !== undefined && value !== null && value !== '') {
