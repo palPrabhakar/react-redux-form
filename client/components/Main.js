@@ -54,6 +54,7 @@ const Main = React.createClass({
 
         if(isFormValid) {
             alert(str)
+            this.props.resetForm();
         }
         else {
             alert(str)
@@ -95,7 +96,7 @@ const Main = React.createClass({
                                 {bankDetail.name.isValid ? <p/> : <p>Enter Valid Bank Name</p>}
                             </div>
                             <div>
-                                <input type="text" placeholder='IABN' name='iabn' value={bankDetail.iabn.value} onChange={this.onBankDetailChange} id={id}/>                            
+                                <input type="text" placeholder='IBAN' name='iabn' value={bankDetail.iabn.value} onChange={this.onBankDetailChange} id={id}/>                            
                                 {bankDetail.iabn.isValid ? <p/> : <p>Enter Valid IABN</p>}
                             </div>
                             <button type="button" onClick={() => {this.props.removeBankField(id)}} style={{marginBottom: '10px'}}>Remove</button>

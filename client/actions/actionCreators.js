@@ -27,3 +27,9 @@ export function removeBankField(id) {
         id
     }
 }
+
+export function resetForm(){
+    return {
+        type: 'RESET_FORM'
+    }
+}

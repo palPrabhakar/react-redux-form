@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
 import rootReducer from './reducers/index';
 
-const defaultState = {
-  userDetails: {  
+export const defaultState = {
+ userDetails: {  
     firstName: {
       value: '',
       isValid: true
